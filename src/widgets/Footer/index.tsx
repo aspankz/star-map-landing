@@ -11,7 +11,11 @@ const Footer = () => {
       </p>
       <div className="flex gap-[16px] justify-center items-center">
         <p className="text-[20px]">help@cosmomap.ru</p>
-        <Link href="https://t.me/">
+        <Link
+          className="cursor-pointer"
+          target="_blank"
+          href="https://t.me/cosmosmap"
+        >
           <Image src="/icons/TG.svg" alt="telegram" width={24} height={24} />
         </Link>
       </div>
