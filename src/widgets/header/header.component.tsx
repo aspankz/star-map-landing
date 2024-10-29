@@ -41,7 +41,7 @@ export const Header = () => {
           ))}
         </div>
         <Link
-          href="https://cosmosmap.ru/constructor"
+          href="https://cosmomap.ru/constructor"
           className="px-[24px] rounded-[30px] bg-[#363B3F] py-[12px]"
         >
           <p>Создать карту</p>
