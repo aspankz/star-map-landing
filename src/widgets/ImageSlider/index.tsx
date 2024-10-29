@@ -4,15 +4,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Image from "next/image";
+import styles from "./ImageSlider.module.css";
 
 export const ImageSlider = () => {
-  const images = ["/galery/photo1.png", "/galery/photo2.png"];
+  const images = ["/gallery/photo1.png", "/gallery/photo2.png"];
 
   return (
-    <div className="relative px-[32px] max-w-[1100px] flex   justify-center ">
+    <div className="relative max-w-[1100px] mx-auto px-[32px]">
       <Swiper
         slidesPerView={1}
-        spaceBetween={16}
+        spaceBetween={30}
         navigation={{
           nextEl: ".swiper-button-nextt",
           prevEl: ".swiper-button-prevv",
@@ -25,21 +26,35 @@ export const ImageSlider = () => {
         }}
       >
         {images.map((src, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide
+            key={index}
+            className="flex justify-center  items-center"
+          >
             <Image
-              className="tablet:w-[200px] w-[404px]"
+              className="tablet:hidden object-cover"
               src={src}
               alt={`Slide ${index}`}
-              width={476}
+              width={505}
               height={404}
+            />
+            <Image
+              className="tablet:block hidden object-cover"
+              src={src}
+              alt={`Slide ${index}`}
+              width={224}
+              height={280}
             />
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="swiper-button-prevv cursor-pointer absolute top-1/2 -translate-y-1/2 left-0">
+      <div
+        className={`swiper-button-prevv ${styles.alwaysVisible} cursor-pointer absolute top-1/2 -translate-y-1/2 left-0`}
+      >
         <Image src="/icons/leftArrow.svg" alt="arrow" width={18} height={30} />
       </div>
-      <div className="swiper-button-nextt cursor-pointer absolute top-1/2 -translate-y-1/2 right-0">
+      <div
+        className={`swiper-button-nextt ${styles.alwaysVisible} cursor-pointer absolute top-1/2 -translate-y-1/2 right-0`}
+      >
         <Image src="/icons/rightArrow.svg" alt="arrow" width={18} height={30} />
       </div>
     </div>
