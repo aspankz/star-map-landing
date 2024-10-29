@@ -1,0 +1,61 @@
+name: PRODUCTION - Build and deploy star-map's landing
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy production
+    runs-on: ["self-hosted", "star-map", "production"]
+    env:
+      ENV_FILE: .env.production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare envs
+        run: |
+          touch $ENV_FILE
+          truncate -s 0 $ENV_FILE
+
+          echo 'COMPOSE_PROJECT_NAME=production-star-map' >> $ENV_FILE
+          echo 'DOMAIN=cosmomap.ru' >> $ENV_FILE
+          echo 'PATH_PREFIX=/' >> $ENV_FILE
+
+      - name: Start docker compose
+        run: |
+          docker compose --env-file $ENV_FILE up -d --build
+
+  cleanup:
+    name: Cleanup docker build
+    runs-on: ["self-hosted", "star-map", "production"]
+    needs: [deploy]
+    if: always()
+    steps:
+      - name: Prune old images
+        run: |
+          docker system prune -a -f
+
+  notify:
+    name: Notify via telegram
+    runs-on: ["self-hosted", "star-map", "production"]
+    needs: [deploy]
+    if: always()
+    steps:
+      - name: Send notification on success
+        if: ${{ contains(join(needs.*.result, ','), 'success') }}
+        run: |
+          curl -X POST "https://api.telegram.org/bot${{secrets.TELEGRAM_TOKEN}}/sendMessage" \
+            -d parse_mode=HTML \
+            -d chat_id=${{secrets.TELEGRAM_CHAT_ID}} \
+            -d text='✅ Build success for star-map landing ${{ github.ref_name }}%0A%0ABy ${{ github.actor }}%0ACommit message: ${{ github.event.commits[0].message }}%0A%0ASee changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}'
+      - name: Send notification on failure
+        if: ${{ contains(join(needs.*.result, ','), 'failure') }}
+        run: |
+          curl -X POST "https://api.telegram.org/bot${{secrets.TELEGRAM_TOKEN}}/sendMessage" \
+            -d parse_mode=HTML \
+            -d chat_id=${{secrets.TELEGRAM_CHAT_ID}} \
+            -d text='❌ Build failed for star-map landing ${{ github.ref_name }}%0A%0ABy ${{ github.actor }}%0ACommit message: ${{ github.event.commits[0].message }}%0A%0ASee changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}'
