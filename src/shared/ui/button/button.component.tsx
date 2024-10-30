@@ -19,7 +19,7 @@ export function Button(props: TButtonProps) {
     <button
       type={type}
       className={clsx(
-        "cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95",
+        "cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95 ease-in-out",
         className,
         primary
           ? "flex w-full items-center justify-center rounded-full bg-button-action py-[16px] text-center text-[16px] text-white disabled:cursor-not-allowed disabled:opacity-80"

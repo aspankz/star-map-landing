@@ -54,7 +54,11 @@ export const Header = () => {
       <div className="flex items-center text-[16px] gap-[48px]">
         <div className="flex tablet:hidden items-center gap-[32px]">
           {links.map((link) => (
-            <Link key={link.name} href={link.link}>
+            <Link
+              key={link.name}
+              className="cursor-pointer hover:scale-105 active:scale-95 duration-300 ease-in-out"
+              href={link.link}
+            >
               {link.name}
             </Link>
           ))}
