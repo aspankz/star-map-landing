@@ -10,13 +10,18 @@ const Footer = () => {
         По вопросам о возврате или внесении изменений в заказ
       </p>
       <div className="flex gap-[16px] justify-center items-center">
-        <p className="text-[20px]">help@cosmomap.ru</p>
+        <Link
+          href="mailto:help@cosmomap.ru?subject=Вопрос&body=Текст"
+          className="cursor-pointer hover:scale-105 active:scale-95 duration-300"
+        >
+          <p className="text-[20px] font-medium">help@cosmomap.ru</p>
+        </Link>
         <Link
           className="cursor-pointer"
           target="_blank"
           href="https://t.me/cosmosmap"
         >
-          <Image src="/icons/TG.svg" alt="telegram" width={24} height={24} />
+          <Image src="/icons/TG.svg" alt="telegram" width={40} height={40} />
         </Link>
       </div>
       <Separator />
@@ -24,6 +29,11 @@ const Footer = () => {
         <p>Чепурина Дарья Анатольевна</p>
         <p>425300104691</p>
       </div>
+      <Link href={"/user-agreement"} className="cursor-pointer">
+        <p className="text-[16px] underline text-text-subtitles text-center">
+          Пользовтельское соглашение
+        </p>
+      </Link>
     </div>
   );
 };

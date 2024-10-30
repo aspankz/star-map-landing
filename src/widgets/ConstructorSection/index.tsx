@@ -16,7 +16,9 @@ const ConstructorSection = () => {
         </div>
       </div>
       <Button className="w-max px-[32px] py-[24px] tablet:py-[16px]" primary>
-        <Link href={"https://cosmomap.ru/constructor"}>Создать карту</Link>
+        <Link href={"https://create.cosmomap.ru/constructor"}>
+          Создать карту
+        </Link>
       </Button>
     </div>
   );

@@ -1,6 +1,10 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/shared/ui/button";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const links = [
   {
@@ -14,24 +18,39 @@ const links = [
 ];
 
 export const Header = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      router.push("/");
+    }
+  };
   return (
-    <div className="w-full h-[72px] px-[64px] tablet:px-[16px] py-[8px] flex items-center justify-between">
-      <Image
-        src={"/Cosmosmap_logo.svg"}
-        alt="Cosmomap"
-        height={56}
-        width={127}
-        className="tablet:hidden"
-        priority
-      />
-      <Image
-        src={"/Cosmosmap_logo_mobile.svg"}
-        alt="Cosmomap"
-        height={48}
-        className="hidden tablet:block"
-        width={48}
-        priority
-      />
+    <div className="w-full fixed z-50 left-0 top-0 bg-black h-[72px] px-[64px] tablet:px-[16px] py-[8px] flex items-center justify-between">
+      <Link onClick={scrollToTop} href={"/"}>
+        <Image
+          src={"/Cosmosmap_logo.svg"}
+          alt="Cosmomap"
+          height={56}
+          width={127}
+          className="tablet:hidden"
+          priority
+        />
+      </Link>
+      <Link onClick={scrollToTop} href={"/"}>
+        <Image
+          src={"/Cosmosmap_logo_mobile.svg"}
+          alt="Cosmomap"
+          height={48}
+          className="hidden tablet:block"
+          width={48}
+          priority
+        />
+      </Link>
       <div className="flex items-center text-[16px] gap-[48px]">
         <div className="flex tablet:hidden items-center gap-[32px]">
           {links.map((link) => (
@@ -40,12 +59,11 @@ export const Header = () => {
             </Link>
           ))}
         </div>
-        <Link
-          href="https://cosmomap.ru/constructor"
-          className="px-[24px] rounded-[30px] bg-[#363B3F] py-[12px]"
-        >
-          <p>Создать карту</p>
-        </Link>
+        <Button className="px-[24px] rounded-[30px] bg-[#363B3F] py-[12px]">
+          <Link href={"https://create.cosmomap.ru/constructor"}>
+            Создать карту
+          </Link>
+        </Button>
       </div>
     </div>
   );

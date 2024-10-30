@@ -13,9 +13,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="icon" href="/icon.ico" type="image/x-icon" />
+      </head>
       <body>
         <Header />
-        {children}
+        <div className="w-full h-full mt-[72px]">{children}</div>
       </body>
     </html>
   );
