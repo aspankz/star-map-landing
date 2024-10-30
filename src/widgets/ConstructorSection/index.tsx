@@ -15,7 +15,7 @@ const ConstructorSection = () => {
         </div>
       </div>
       <Link
-        className="px-[32px] rounded-full text-[20px] py-[24px] rounded-[30px] cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95 ease-in-out bg-button-action "
+        className="px-[32px] rounded-full text-[20px] py-[24px]  cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95 ease-in-out bg-button-action "
         href={"https://create.cosmomap.ru/constructor"}
       >
         Создать карту
