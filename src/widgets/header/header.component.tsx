@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/shared/ui/button";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
@@ -63,11 +62,12 @@ export const Header = () => {
             </Link>
           ))}
         </div>
-        <Button className="px-[24px] rounded-[30px] bg-[#363B3F] py-[12px]">
-          <Link href={"https://create.cosmomap.ru/constructor"}>
-            Создать карту
-          </Link>
-        </Button>
+        <Link
+          className="px-[24px] rounded-[30px] text-[16px] cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95 ease-in-out bg-button-action py-[12px]"
+          href={"https://create.cosmomap.ru/constructor"}
+        >
+          Создать карту
+        </Link>
       </div>
     </div>
   );

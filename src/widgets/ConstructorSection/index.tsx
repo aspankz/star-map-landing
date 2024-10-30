@@ -1,4 +1,3 @@
-import { Button } from "@/shared/ui/button";
 import Link from "next/link";
 import React from "react";
 
@@ -15,11 +14,12 @@ const ConstructorSection = () => {
           <p>будь то свадьба, день рождения или годовщина.</p>
         </div>
       </div>
-      <Button className="w-max px-[32px] py-[24px] tablet:py-[16px]" primary>
-        <Link href={"https://create.cosmomap.ru/constructor"}>
-          Создать карту
-        </Link>
-      </Button>
+      <Link
+        className="px-[32px] rounded-full text-[20px] py-[24px] rounded-[30px] cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95 ease-in-out bg-button-action "
+        href={"https://create.cosmomap.ru/constructor"}
+      >
+        Создать карту
+      </Link>
     </div>
   );
 };
