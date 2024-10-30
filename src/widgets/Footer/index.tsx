@@ -29,7 +29,7 @@ const Footer = () => {
       </div>
       <Link href={"/user-agreement"} className="cursor-pointer">
         <p className="text-[16px] underline text-text-subtitles text-center">
-          Пользовтельское соглашение
+          Пользовательское соглашение
         </p>
       </Link>
     </div>
