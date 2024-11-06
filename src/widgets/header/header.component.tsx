@@ -30,26 +30,28 @@ export const Header = () => {
   };
   return (
     <div className="w-full fixed z-50 left-0 top-0 bg-black h-[72px] px-[64px] tablet:px-[16px] py-[8px] flex items-center justify-between">
-      <Link onClick={scrollToTop} href={"/"}>
-        <Image
-          src={"/Cosmosmap_logo.svg"}
-          alt="Cosmomap"
-          height={56}
-          width={127}
-          className="tablet:hidden"
-          priority
-        />
-      </Link>
-      <Link onClick={scrollToTop} href={"/"}>
-        <Image
-          src={"/Cosmosmap_logo_mobile.svg"}
-          alt="Cosmomap"
-          height={48}
-          className="hidden tablet:block"
-          width={48}
-          priority
-        />
-      </Link>
+      <div>
+        <Link onClick={scrollToTop} href={"/"}>
+          <Image
+            src={"/Cosmosmap_logo.svg"}
+            alt="Cosmomap"
+            height={56}
+            width={127}
+            className="tablet:hidden"
+            priority
+          />
+        </Link>
+        <Link onClick={scrollToTop} href={"/"}>
+          <Image
+            src={"/Cosmosmap_logo_mobile.svg"}
+            alt="Cosmomap"
+            height={48}
+            className="hidden tablet:block"
+            width={48}
+            priority
+          />
+        </Link>
+      </div>
       <div className="flex items-center text-[16px] gap-[48px]">
         <div className="flex tablet:hidden items-center gap-[32px]">
           {links.map((link) => (

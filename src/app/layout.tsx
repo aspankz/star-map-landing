@@ -3,6 +3,14 @@ import { Header } from "../widgets/header";
 
 export const metadata = {
   title: "Cosmomap",
+  openGraph: {
+    title: "Ваше звёздное небо!🌌",
+    description:
+      "Закажите карту для памятной даты и сохраните мгновение навсегда",
+  },
+  icons: {
+    icon: "/icon.ico",
+  },
 };
 
 export default function RootLayout({
