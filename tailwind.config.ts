@@ -51,6 +51,6 @@ export default {
       },
     },
   },
-  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
-  plugins: [],
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require, @typescript-eslint/no-require-imports
+  plugins: [require("@tailwindcss/line-clamp")],
 } satisfies Config;

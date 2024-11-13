@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import { Separator } from "@/shared/ui/button/separator";
+import { Separator } from "@/shared/ui/separator";
 
 const Footer = () => {
   return (

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import ConstructorLink from "@/shared/ui/constructorLink";
 
 const links = [
   {
@@ -64,12 +65,10 @@ export const Header = () => {
             </Link>
           ))}
         </div>
-        <Link
-          className="px-[24px] rounded-[30px] text-[16px] cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95 ease-in-out bg-button-action py-[12px]"
-          href={"https://create.cosmomap.ru/constructor"}
-        >
-          Создать карту
-        </Link>
+        <ConstructorLink
+          label="Создать карту"
+          className="px-[24px] rounded-[30px] text-[16px] py-[12px] "
+        />
       </div>
     </div>
   );

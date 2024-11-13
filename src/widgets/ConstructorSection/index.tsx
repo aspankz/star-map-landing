@@ -1,4 +1,5 @@
-import Link from "next/link";
+import ConstructorLink from "@/shared/ui/constructorLink";
+
 import React from "react";
 
 const ConstructorSection = () => {
@@ -14,12 +15,10 @@ const ConstructorSection = () => {
           <p>будь то свадьба, день рождения или годовщина.</p>
         </div>
       </div>
-      <Link
-        className="px-[32px] rounded-full text-[20px] py-[24px]  cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95 ease-in-out bg-button-action "
-        href={"https://create.cosmomap.ru/constructor"}
-      >
-        Создать карту
-      </Link>
+      <ConstructorLink
+        label="Создать карту"
+        className="text-[20px] py-[24px] px-[32px]"
+      />
     </div>
   );
 };
