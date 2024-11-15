@@ -30,7 +30,7 @@ const HowItWorksSection = () => {
         <div className="flex flex-1 flex-col items-center">
           <Image src={emailImg} alt="email" width={124} height={124} />
           <p className="text-center text-[16px]">
-            Мгновенно получите файли рекомендации по печати на e-mail
+            Мгновенно получите файлы рекомендации по печати на e-mail
           </p>
         </div>
         <Image
@@ -43,8 +43,8 @@ const HowItWorksSection = () => {
         <div className="flex flex-1 flex-col items-center">
           <Image src={printImg} alt="print" width={124} height={124} />
           <p className="text-center text-[16px]">
-            Распечатайте файл в любом копицентре или типографии и оформите
-            в рамку
+            Распечатайте файл в любом копицентре или типографии и оформите в
+            рамку
           </p>
         </div>
       </div>
