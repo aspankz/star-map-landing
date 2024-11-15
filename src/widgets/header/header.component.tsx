@@ -36,8 +36,8 @@ export const Header = () => {
           <Image
             src={"/Cosmosmap_logo.svg"}
             alt="Cosmomap"
-            height={56}
-            width={127}
+            height={25}
+            width={144}
             className="tablet:hidden"
             priority
           />
@@ -46,9 +46,9 @@ export const Header = () => {
           <Image
             src={"/Cosmosmap_logo_mobile.svg"}
             alt="Cosmomap"
-            height={48}
+            height={36}
             className="hidden tablet:block"
-            width={48}
+            width={30}
             priority
           />
         </Link>
