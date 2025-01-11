@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     name: Deploy production
-    runs-on: ["self-hosted", "star-map", "production"]
+    runs-on: ['self-hosted', 'star-map', 'production']
     env:
       ENV_FILE: .env.production
     steps:
@@ -31,7 +31,7 @@ jobs:
 
   cleanup:
     name: Cleanup docker build
-    runs-on: ["self-hosted", "star-map", "production"]
+    runs-on: ['self-hosted', 'star-map', 'production']
     needs: [deploy]
     if: always()
     steps:
@@ -41,7 +41,7 @@ jobs:
 
   notify:
     name: Notify via telegram
-    runs-on: ["self-hosted", "star-map", "production"]
+    runs-on: ['self-hosted', 'star-map', 'production']
     needs: [deploy]
     if: always()
     steps:

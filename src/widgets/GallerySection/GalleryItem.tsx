@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react'
+import Image from 'next/image'
 
 interface Props {
-  image: string;
-  name: string;
-  text: string;
+  image: string
+  name: string
+  text: string
 }
 
 export const GalleryItem = ({ image, name, text }: Props) => {
@@ -19,10 +19,8 @@ export const GalleryItem = ({ image, name, text }: Props) => {
       />
       <div className="space-y-1 px-3 font-medium">
         <h3 className="text-xl font-medium">{name}</h3>
-        <p className="line-clamp-7 whitespace-pre-wrap break-words leading-5">
-          {text}
-        </p>
+        <p className="line-clamp-7 whitespace-pre-wrap break-words leading-5">{text}</p>
       </div>
     </div>
-  );
-};
+  )
+}

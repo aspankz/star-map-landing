@@ -1,1 +1,1 @@
-export const Separator = () => <div className="bg-backgroundLine h-[1px] w-full" />
+export const Separator = () => <div className="h-[1px] w-full bg-backgroundLine" />

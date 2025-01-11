@@ -1,55 +1,56 @@
-import React from "react";
-import Image from "next/image";
-import phoneImg from "./images/phone.png";
-import emailImg from "./images/email.png";
-import printImg from "./images/print.png";
+import React from 'react'
+import Image from 'next/image'
+import phoneImg from './images/phone.png'
+import emailImg from './images/email.png'
+import printImg from './images/print.png'
+import { RightArrow } from '@/shared/ui/icons/RightArrow'
 
 const HowItWorksSection = () => {
   return (
-    <div
-      id="howItWorks"
-      className="flex flex-col pt-[64px] pb-[80px] px-[24px] gap-[32px]"
-    >
-      <h2 className="text-[24px] font-bold text-center">
-        Как напечатать звездную карту?
-      </h2>
-      <div className="flex tablet:flex-col max-w-[1000px] items-center mx-auto   gap-[24px] w-full">
-        <div className="flex flex-1 flex-col items-center">
-          <Image src={phoneImg} alt="phone" width={124} height={124} />
-          <p className="text-center text-[16px]">
+    <div id="howItWorks" className="flex flex-col items-center gap-8 px-4 pb-16 pt-10">
+      <h2 className="text-center text-xl font-medium">Как это работает?</h2>
+      <div className="flex w-full max-w-7xl items-center justify-center gap-6 tablet:flex-col">
+        <div className="flex max-w-[16rem] flex-1 flex-col items-center gap-4">
+          <Image
+            src={phoneImg}
+            alt="phone"
+            width={1024}
+            height={1024}
+            className="w-[10rem]"
+          />
+          <p className="text-center">
             Выберите дату и место вашего события, настройте дизайн
           </p>
         </div>
-        <Image
-          className="tablet:hidden"
-          src="/icons/arrow.svg"
-          alt="arrow"
-          width={80}
-          height={1}
-        />
-        <div className="flex flex-1 flex-col items-center">
-          <Image src={emailImg} alt="email" width={124} height={124} />
-          <p className="text-center text-[16px]">
-            Мгновенно получите файлы рекомендации по печати на e-mail
+        <RightArrow className="tablet:rotate-90" />
+        <div className="flex max-w-[16rem] flex-1 flex-col items-center gap-4">
+          <Image
+            src={emailImg}
+            alt="email"
+            width={1024}
+            height={1024}
+            className="w-[10rem]"
+          />
+          <p className="text-center">
+            Мгновенно получите файл и рекомендации по печати на e-mail
           </p>
         </div>
-        <Image
-          className="tablet:hidden"
-          src="/icons/arrow.svg"
-          alt="arrow"
-          width={80}
-          height={1}
-        />
-        <div className="flex flex-1 flex-col items-center">
-          <Image src={printImg} alt="print" width={124} height={124} />
-          <p className="text-center text-[16px]">
-            Распечатайте файл в любом копицентре или типографии и оформите в
-            рамку
+        <RightArrow className="tablet:rotate-90" />
+        <div className="flex max-w-[16rem] flex-1 flex-col items-center gap-4">
+          <Image
+            src={printImg}
+            alt="print"
+            width={1024}
+            height={1024}
+            className="w-[10rem]"
+          />
+          <p className="text-center">
+            Распечатайте файл в любом копицентре или типографии и оформите в рамку
           </p>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HowItWorksSection;
+export default HowItWorksSection

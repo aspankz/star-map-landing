@@ -1,11 +1,11 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   // basePath: "/star-map-landing",
-  assetPrefix: "/star-map-landing",
+  assetPrefix: '/star-map-landing',
   publicRuntimeConfig: {
-    basePath: "/star-map-landing",
+    basePath: '/star-map-landing',
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig

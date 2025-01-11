@@ -1,24 +1,23 @@
-import "./globals.css";
-import { Header } from "../widgets/header";
-import Head from "next/head";
-import Script from "next/script";
+import './globals.css'
+import { Header } from '../widgets/header'
+import Head from 'next/head'
+import Script from 'next/script'
 
 export const metadata = {
-  title: "Cosmomap",
+  title: 'Cosmomap',
   openGraph: {
-    title: "Ваше звёздное небо!🌌",
-    description:
-      "Закажите карту для памятной даты и сохраните мгновение навсегда",
+    title: 'Ваше звёздное небо!🌌',
+    description: 'Закажите карту для памятной даты и сохраните мгновение навсегда',
   },
   icons: {
-    icon: "/icon.ico",
+    icon: '/icon.ico',
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="ru">
@@ -34,7 +33,7 @@ export default function RootLayout({
 
       <body>
         <Header />
-        <div className="w-full h-full mt-[72px]">{children}</div>
+        <div className="mt-16 h-full w-full">{children}</div>
         <Script
           id="mailru-counter"
           strategy="afterInteractive"
@@ -63,7 +62,7 @@ export default function RootLayout({
           <div>
             <img
               src="https://top-fwz1.mail.ru/counter?id=3576936;js=na"
-              style={{ position: "absolute", left: "-9999px" }}
+              style={{ position: 'absolute', left: '-9999px' }}
               alt="Top.Mail.Ru - statistics and analytics for your site"
             />
           </div>
@@ -93,7 +92,7 @@ export default function RootLayout({
           <div>
             <img
               src="https://mc.yandex.ru/watch/98955497"
-              style={{ position: "absolute", left: "-9999px" }}
+              style={{ position: 'absolute', left: '-9999px' }}
               alt=""
             />
           </div>
@@ -101,5 +100,5 @@ export default function RootLayout({
         {/* /Yandex.Metrika counter */}
       </body>
     </html>
-  );
+  )
 }

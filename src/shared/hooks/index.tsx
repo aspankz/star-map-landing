@@ -1,1 +1,1 @@
-export { useScreenWidth } from "./use-screen-width.hook";
+export { useScreenWidth } from './use-screen-width.hook'
