@@ -1,29 +1,22 @@
-import clsx from "clsx";
+import clsx from 'clsx'
 
 type TButtonProps = {
-  primary?: boolean;
-  loading?: boolean;
-} & React.ComponentPropsWithoutRef<"button">;
+  primary?: boolean
+  loading?: boolean
+} & React.ComponentPropsWithoutRef<'button'>
 
 export function Button(props: TButtonProps) {
-  const {
-    type = "button",
-    className,
-    children,
-    primary,
-    loading,
-    ...otherProps
-  } = props;
+  const { type = 'button', className, children, primary, loading, ...otherProps } = props
 
   return (
     <button
       type={type}
       className={clsx(
-        "cursor-pointer duration-300 disabled:cursor-not-allowed hover:scale-105 active:scale-95 ease-in-out",
+        'cursor-pointer duration-300 ease-in-out hover:scale-105 active:scale-95 disabled:cursor-not-allowed',
         className,
         primary
-          ? "flex w-full items-center justify-center rounded-full bg-button-action py-[16px] text-center text-[16px] text-white disabled:cursor-not-allowed disabled:opacity-80"
-          : ""
+          ? 'flex w-full items-center justify-center rounded-full bg-button-action py-[16px] text-center text-[16px] text-white disabled:cursor-not-allowed disabled:opacity-80'
+          : '',
       )}
       {...otherProps}
     >
@@ -45,5 +38,5 @@ export function Button(props: TButtonProps) {
       )}
       {children}
     </button>
-  );
+  )
 }

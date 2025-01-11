@@ -1,75 +1,55 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
-import ConstructorLink from "@/shared/ui/constructorLink";
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
+import { StarIcon } from '@/shared/ui/icons/Star'
 
-const links = [
-  {
-    name: "Как это работает?",
-    link: "#howItWorks",
-  },
-  {
-    name: "Галерея",
-    link: "#gallery",
-  },
-];
+// const links = [
+//   {
+//     name: "Как это работает?",
+//     link: "#howItWorks",
+//   },
+//   {
+//     name: "Галерея",
+//     link: "#gallery",
+//   },
+// ];
 
 export const Header = () => {
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useRouter()
+  const pathname = usePathname()
   const scrollToTop = (e: React.MouseEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    if (pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     } else {
-      router.push("/");
+      router.push('/')
     }
-  };
+  }
   return (
-    <div className="w-full fixed z-50 left-0 top-0 bg-black h-[72px] px-[64px] tablet:px-[16px] py-[8px] flex items-center justify-between">
-      <div>
-        <Link onClick={scrollToTop} href={"/"}>
+    <div className="fixed left-0 top-0 z-50 flex w-full items-center justify-center bg-surface px-3 py-4">
+      <div className="flex w-full max-w-7xl items-center justify-between">
+        <Link onClick={scrollToTop} href={'/'}>
           <Image
-            src={"/Cosmosmap_logo.svg"}
+            src={'/Cosmosmap_logo.svg'}
             alt="Cosmomap"
             height={25}
             width={144}
-            className="tablet:hidden"
             priority
           />
         </Link>
-        <Link onClick={scrollToTop} href={"/"}>
-          <Image
-            src={"/Cosmosmap_logo_mobile.svg"}
-            alt="Cosmomap"
-            height={36}
-            className="hidden tablet:block"
-            width={30}
-            priority
-          />
+
+        <Link
+          href={'https://create.cosmomap.ru/constructor'}
+          className="inline-flex items-center justify-center gap-2.5 rounded-lg bg-white/20 px-6 py-2 tablet:px-2"
+        >
+          <StarIcon />
+          <p className="tablet:hidden">Создать карту</p>
         </Link>
-      </div>
-      <div className="flex items-center text-[16px] gap-[48px]">
-        <div className="flex tablet:hidden items-center gap-[32px]">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              className="cursor-pointer hover:scale-105 active:scale-95 duration-300 ease-in-out"
-              href={link.link}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-        <ConstructorLink
-          label="Создать карту"
-          className="px-[24px] rounded-[30px] text-[16px] py-[12px] "
-        />
       </div>
     </div>
-  );
-};
+  )
+}
