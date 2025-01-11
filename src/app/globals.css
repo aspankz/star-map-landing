@@ -1,12 +1,12 @@
-@import "@/shared/styles/index.css";
+@import '@/shared/styles/index.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #000000;
-  --foreground: #ededed;
+  --background: #090817;
+  --foreground: #ffffffcc;
 }
 
 body {

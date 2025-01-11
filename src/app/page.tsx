@@ -1,22 +1,23 @@
-import ConstructorSection from "../widgets/ConstructorSection";
-import Footer from "../widgets/Footer";
-import GallerySection from "../widgets/GallerySection";
-import HowItWorksSection from "../widgets/HowItWorksSection";
-import ConstructorLink from "@/shared/ui/constructorLink";
+import { CasesSection } from '@/widgets/CasesSection'
+import ConstructorSection from '../widgets/ConstructorSection'
+import Footer from '../widgets/Footer'
+import GallerySection from '../widgets/GallerySection'
+import HowItWorksSection from '../widgets/HowItWorksSection'
+import { BenefitSection } from '@/widgets/BenefitSection'
+import { QuestionSection } from '@/widgets/QuestionsSection'
+import ConstructorSection2 from '@/widgets/ConstructorSection2'
 
 export default function Home() {
   return (
-    <div className="w-full h-full  items-center justify-center">
+    <div className="h-full w-full items-center justify-center">
       <ConstructorSection />
+      <CasesSection />
       <HowItWorksSection />
+      <BenefitSection />
       <GallerySection />
-      <div className="bg-[#021327] flex justify-center py-[40px] ">
-        <ConstructorLink
-          className="text-[20px] py-[17px] px-[32px] "
-          label="Создайте свою карту"
-        />
-      </div>
+      <QuestionSection />
+      <ConstructorSection2 />
       <Footer />
     </div>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-version: "3.9"
+version: '3.9'
 
 services:
   landing:
     build:
       context: .
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.landing-${COMPOSE_PROJECT_NAME}.entrypoints=websecure"
-      - "traefik.http.routers.landing-${COMPOSE_PROJECT_NAME}.rule=Host(`${DOMAIN}`) && PathPrefix(`${PATH_PREFIX}`)"
-      - "traefik.http.routers.landing-${COMPOSE_PROJECT_NAME}.tls.certresolver=le"
-      - "traefik.http.routers.landing-${COMPOSE_PROJECT_NAME}.tls=true"
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.landing-${COMPOSE_PROJECT_NAME}.entrypoints=websecure'
+      - 'traefik.http.routers.landing-${COMPOSE_PROJECT_NAME}.rule=Host(`${DOMAIN}`) && PathPrefix(`${PATH_PREFIX}`)'
+      - 'traefik.http.routers.landing-${COMPOSE_PROJECT_NAME}.tls.certresolver=le'
+      - 'traefik.http.routers.landing-${COMPOSE_PROJECT_NAME}.tls=true'
     networks:
       - traefik
 
