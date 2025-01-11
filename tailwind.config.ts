@@ -28,8 +28,9 @@ export default {
         backgroundLine: '#21242F',
 
         text: {
+          primary: '#FFFFFFCC',
           subtitles: '#D2D5DF',
-          secondary: '#B4B9CA',
+          secondary: '#FFFFFF80',
         },
         input: {
           stroke: '#21242F',

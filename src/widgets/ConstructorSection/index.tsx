@@ -10,9 +10,16 @@ const ConstructorSection = () => {
         <Image
           src="/images/starmap.jpg"
           alt="constructor"
-          height={600}
-          width={2000}
-          className="h-80 w-full rounded-3xl object-cover tablet:rounded-none"
+          height={750}
+          width={560}
+          className="hidden h-80 w-full object-cover tablet:block"
+        />
+        <Image
+          src="/images/starmap-big.jpg"
+          alt="constructor"
+          height={2160}
+          width={2680}
+          className="h-80 w-full rounded-3xl object-cover tablet:hidden"
         />
         <div className="flex flex-col items-center space-y-10">
           <div className="space-y-3 text-center">

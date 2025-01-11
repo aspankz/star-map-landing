@@ -1,5 +1,5 @@
 'use client'
-import { QuestionOpenIcon } from '@/shared/ui/icons/QuestionOpenIcon '
+import { QuestionOpenIcon } from '@/shared/ui/icons/QuestionOpenIcon'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
 
