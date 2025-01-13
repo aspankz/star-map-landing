@@ -23,10 +23,12 @@ export default function RootLayout({
     <html lang="ru">
       <Head>
         <title>Cosmomap</title>
-        <meta property="og:title" content="Ваше звёздное небо!🌌" />
+        <meta property="og:title" content="Звездная карта | Подарок" />
         <meta
           property="og:description"
-          content="Закажите карту для памятной даты и сохраните мгновение навсегда"
+          content="Ваша дата. Ваши звёзды. Ваша история.
+                    ✨ Звездная карта за 490₽
+                    ✨ Получите мгновенно на email"
         />
         <link rel="icon" href="/icon.ico" type="image/x-icon" />
       </Head>
