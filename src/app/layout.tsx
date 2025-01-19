@@ -1,13 +1,14 @@
 import './globals.css'
 import { Header } from '../widgets/header'
-import Head from 'next/head'
 import Script from 'next/script'
 
 export const metadata = {
   title: 'Cosmomap',
   openGraph: {
-    title: 'Ваше звёздное небо!🌌',
-    description: 'Закажите карту для памятной даты и сохраните мгновение навсегда',
+    title: 'Звездная карта | Подарок',
+    description: `Ваша дата. Ваши звёзды. Ваша история.
+                    ✨ Звездная карта за 490₽
+                    ✨ Получите мгновенно на email`,
   },
   icons: {
     icon: '/icon.ico',
@@ -21,17 +22,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <Head>
-        <title>Cosmomap</title>
-        <meta property="og:title" content="Звездная карта | Подарок" />
-        <meta
-          property="og:description"
-          content="Ваша дата. Ваши звёзды. Ваша история.
-                    ✨ Звездная карта за 490₽
-                    ✨ Получите мгновенно на email"
-        />
-        <link rel="icon" href="/icon.ico" type="image/x-icon" />
-      </Head>
 
       <body>
         <Header />
