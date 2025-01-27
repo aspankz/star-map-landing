@@ -9,6 +9,7 @@ export default {
         SFProRounded: ['SF-Pro-Rounded', 'sans-serif'],
       },
       screens: {
+        laptop: { max: '1024px' },
         tablet: { max: '769px' },
         phone: { max: '390px' },
         customerPhone: { max: '383px' },

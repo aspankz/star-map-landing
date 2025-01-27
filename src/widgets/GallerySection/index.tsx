@@ -69,10 +69,10 @@ const GallerySection = () => {
   return (
     <div id="gallery" className="flex flex-col gap-8 px-4 py-16 tablet:px-0">
       <h2 className="text-center text-xl font-medium">Ваши звёздные моменты</h2>
-      <div className="mx-auto max-w-7xl tablet:hidden tablet:w-[16rem]">
+      <div className="laptop:hidden mx-auto max-w-7xl tablet:w-[16rem]">
         <ImageSlider />
       </div>
-      <div className="no-scrollbar hidden max-w-full justify-start gap-4 overflow-x-auto ps-4 tablet:flex">
+      <div className="no-scrollbar laptop:flex hidden max-w-full justify-start gap-4 overflow-x-auto ps-4">
         {feedbacks.map((galleryItem) => (
           <GalleryItem key={galleryItem.name} {...galleryItem} />
         ))}
