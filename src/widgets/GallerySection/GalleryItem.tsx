@@ -9,7 +9,9 @@ interface Props {
 
 export const GalleryItem = ({ image, name, text }: Props) => {
   return (
-    <div className="inline-flex h-[30.5rem] w-[16rem] flex-shrink-0 flex-col items-start justify-start gap-4 overflow-hidden rounded-xl bg-[#1f1b3a] pb-6">
+    <div
+      className={`inline-flex h-[30.5rem] w-[16rem] flex-shrink-0 flex-col items-start justify-start gap-4 overflow-hidden rounded-xl bg-[#1f1b3a] pb-6 duration-300 ease-in-out`}
+    >
       <Image
         className="w-full object-cover"
         src={image}
