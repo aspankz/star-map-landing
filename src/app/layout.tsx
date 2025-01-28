@@ -1,6 +1,6 @@
 import './globals.css'
 import { Header } from '../widgets/header'
-import { YandexMetrika } from '@/widgets/YandexMetrika'
+import { VarioqubExperiments, YandexMetrika } from '@/widgets/Metriks'
 
 export const metadata = {
   title: 'Cosmomap',
@@ -26,6 +26,7 @@ export default function RootLayout({
         <Header />
         <div className="mt-20 h-full w-full">{children}</div>
         <YandexMetrika />
+        <VarioqubExperiments />
       </body>
     </html>
   )
